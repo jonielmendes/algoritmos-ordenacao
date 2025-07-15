@@ -1,6 +1,6 @@
-# 🚀Algoritmos de Ordenação
+# 🧮 Algoritmos de Ordenação em C
 
-Este projeto demonstra como ordenar um array de pessoas usando três algoritmos clássicos de ordenação em **C**. Cada pessoa tem nome e idade, e a ordenação é feita em ordem alfabética pelo nome. Além disso, o programa exibe estatísticas de desempenho para cada algoritmo.
+Este algoritmo ordena um array de pessoas (nome e idade) em **C** utilizando três algoritmos clássicos de ordenação: **Insertion Sort**, **Merge Sort** e **Quick Sort**. A ordenação é feita em ordem alfabética pelo nome, e o programa exibe estatísticas de desempenho para cada algoritmo.
 
 ## 👤 Estrutura da Pessoa
 
@@ -24,6 +24,59 @@ typedef struct {
   - ⏱️ Tempo médio de execução (milissegundos, média de 5 execuções)
 - Impressão da lista ordenada de pessoas
 
+---
+
+## 📖 Explicação dos Algoritmos Escolhidos
+
+### 1. 📝 Insertion Sort
+
+**Como funciona:**  
+O Insertion Sort percorre o array da esquerda para a direita e, para cada elemento, insere-o na posição correta entre os elementos já ordenados à esquerda.  
+É eficiente para pequenas quantidades de dados e listas quase ordenadas.
+
+**Complexidade:**  
+- Melhor caso: O(n) (lista já ordenada)
+- Pior caso: O(n²) (lista inversamente ordenada)
+- Espaço: O(1), é um algoritmo in-place
+
+### 2. 🪄 Merge Sort
+
+**Como funciona:**  
+O Merge Sort é um algoritmo recursivo que divide o array em duas partes, ordena cada parte e depois as combina (merge) em uma sequência ordenada.  
+É eficiente para grandes quantidades de dados e garante boa performance em qualquer situação.
+
+**Complexidade:**  
+- Melhor caso: O(n log n)
+- Pior caso: O(n log n)
+- Espaço: O(n), devido ao array auxiliar
+
+### 3. ⚡ Quick Sort
+
+**Como funciona:**  
+O Quick Sort seleciona um “pivô” e particiona o array em duas partes: elementos menores (à esquerda) e maiores (à direita) que o pivô. Ordena cada parte recursivamente.  
+É muito rápido na prática para dados aleatórios, mas pode ser O(n²) em casos extremos (pivot ruim).
+
+**Complexidade:**  
+- Melhor caso: O(n log n)
+- Pior caso: O(n²) (pivot sempre mínimo/máximo)
+- Espaço: O(log n), devido à recursão
+
+---
+
+## 📊 Tabela de Resultados
+
+Resultados obtidos para um array de 100 pessoas, ordenando pelo nome:
+
+| Algoritmo       | Comparações | Trocas | Tempo Médio (ms) |
+|-----------------|-------------|--------|------------------|
+| 📝 Insertion Sort  | 2638        | 2642   | 0.00             |
+| 🪄 Merge Sort      | 574         | 704    | 0.20             |
+| ⚡ Quick Sort      | 667         | 495    | 0.00             |
+
+> Os valores podem variar em diferentes execuções e máquinas.
+
+---
+
 ## 🛠️ Como Executar
 
 1. **Compile o código:**
@@ -38,38 +91,11 @@ typedef struct {
    ```sh
    main.exe
    ```
-
-> 💡 **Dica:** Para que acentos apareçam corretamente no terminal do Windows, use:
-> ```
-> chcp 65001
-> ```
-
-## 📋 Exemplo de Saída
-
-```
-==== Insertion Sort ====
-Lista ordenada:
-Agatha Chaves (20)
-...
-Comparacoes: 5276, Trocas: 5284, Tempo medio: 0.00 ms
-
-==== Merge Sort ====
-...
-
-==== Quick Sort ====
-...
-```
-
-## 📚 Algoritmos Implementados
-
-- 📝 Insertion Sort
-- 🪄 Merge Sort
-- ⚡ Quick Sort
-
-Você pode adaptar o projeto para outros algoritmos de ordenação se desejar.
+---
 
 ## 👨‍💻 Autor
 
 Feito por **Joniel Mendes**.
 
 ---
+
