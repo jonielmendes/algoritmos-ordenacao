@@ -140,7 +140,6 @@ void executaOrdenacao(void (*alg)(Pessoa[], int, Estatisticas*), Pessoa dados[],
     e->comparacoes = soma.comparacoes / 5;
     e->trocas = soma.trocas / 5;
     e->tempo_ms = soma.tempo_ms / 5.0;
-    // Copia o último array ordenado de volta para 'dados'
     copiaArray(temp, dados, n);
     printf("Lista ordenada:\n");
     imprimePessoas(dados, n);
@@ -180,17 +179,17 @@ int main() {
     Pessoa teste[n];
     Estatisticas estat;
 
-    printf("==== Insertion Sort ====\n");
+    printf(" Insertion Sort\n");
     copiaArray(pessoas, teste, n);
     executaOrdenacao(insertionSort, teste, n, &estat);
     printf("Comparacoes: %d, Trocas: %d, Tempo medio: %.2f ms\n\n", estat.comparacoes, estat.trocas, estat.tempo_ms);
 
-    printf("==== Merge Sort ====\n");
+    printf("Merge Sort\n");
     copiaArray(pessoas, teste, n);
     executaOrdenacao(mergeSort, teste, n, &estat);
     printf("Comparacoes: %d, Trocas: %d, Tempo medio: %.2f ms\n\n", estat.comparacoes, estat.trocas, estat.tempo_ms);
 
-    printf("==== Quick Sort ====\n");
+    printf("Quick Sort\n");
     copiaArray(pessoas, teste, n);
     executaOrdenacao(quickSort, teste, n, &estat);
     printf("Comparacoes: %d, Trocas: %d, Tempo medio: %.2f ms\n\n", estat.comparacoes, estat.trocas, estat.tempo_ms);
